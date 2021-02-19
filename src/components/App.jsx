@@ -1,6 +1,6 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 
 const App = () => (
   <div>
