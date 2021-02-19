@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -9,6 +9,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import Container from "@material-ui/core/Container";
+import AppContext from "../context/AppContext";
 
 const columns = [
   { id: "firstName", label: "Nombres", minWidth: 100 },
@@ -113,6 +114,12 @@ export default function Users() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  const {
+    state: { users },
+  } = useContext(AppContext);
+
+  console.log("users", users);
 
   return (
     <Container maxWidth="lg">
