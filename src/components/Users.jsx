@@ -16,7 +16,7 @@ const columns = [
   {
     id: "identification",
     label: "Identificación (C.C)",
-    minWidth: 120,
+    minWidth: 80,
   },
   {
     id: "role",
@@ -26,17 +26,17 @@ const columns = [
   {
     id: "state",
     label: "Estado",
-    minWidth: 50,
+    minWidth: 30,
   },
   {
     id: "phone",
     label: "Teléfono",
-    minWidth: 100,
+    minWidth: 80,
   },
   {
     id: "email",
     label: "Correo electrónico",
-    minWidth: 170,
+    minWidth: 100,
   },
 ];
 
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
     width: "100%",
   },
   container: {
-    maxHeight: 580,
+    maxHeight: 1200,
   },
 });
 
