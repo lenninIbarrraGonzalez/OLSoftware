@@ -16,7 +16,7 @@ const columns = [
   {
     id: "identification",
     label: "Identificación (C.C)",
-    minWidth: 120,
+    minWidth: 80,
   },
   {
     id: "role",
@@ -26,69 +26,18 @@ const columns = [
   {
     id: "state",
     label: "Estado",
-    minWidth: 50,
+    minWidth: 30,
   },
   {
     id: "phone",
     label: "Teléfono",
-    minWidth: 100,
+    minWidth: 80,
   },
   {
     id: "email",
     label: "Correo electrónico",
-    minWidth: 170,
+    minWidth: 100,
   },
-];
-
-function createData(
-  firstName,
-  lastName,
-  identification,
-  role,
-  state,
-  phone,
-  email
-) {
-  return { firstName, lastName, identification, role, state, phone, email };
-}
-
-const rows = [
-  createData(
-    "Andres Felipe",
-    "Garcia Castro",
-    1324171354,
-    "Administrador",
-    "Activo",
-    "3154415599",
-    "ing.lenninibarra@gmail.com"
-  ),
-  createData(
-    "Lennin Geovanny",
-    "Ibarra Gonzalez",
-    1403500365,
-    "Conductor",
-    "Activo",
-    "3154415599",
-    "ing.lenninibarra@gmail.com"
-  ),
-  createData(
-    "Natali Valentina",
-    "Martinez",
-    60483973,
-    "Recolector",
-    "Activo",
-    "3154415599",
-    "ing.lenninibarra@gmail.com"
-  ),
-  createData(
-    "Leidy Liliana",
-    "Burbano Galeano",
-    327167434,
-    "Digitador CG-UNO",
-    "Activo",
-    "3154415599",
-    "ing.lenninibarra@gmail.com"
-  ),
 ];
 
 const useStyles = makeStyles({
@@ -96,7 +45,7 @@ const useStyles = makeStyles({
     width: "100%",
   },
   container: {
-    maxHeight: 580,
+    maxHeight: 1200,
   },
 });
 
