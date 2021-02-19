@@ -1,11 +1,12 @@
+import { Search } from "@material-ui/icons";
 import React from "react";
 import Users from "../components/Users";
-// import Users2 from "../components/Users2";
+import Searchs from "../components/Searchs";
 
 const Home = () => (
   <div>
     <Users />
-    {/* <Users2 /> */}
+    <Searchs />
   </div>
 );
 
