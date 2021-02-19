@@ -1,6 +1,12 @@
 import React from 'react';
-import '../styles/components/app.css';
+import Button from '@material-ui/core/Button';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 
-const App = () => <h1>OLSoftware</h1>;
+const App = () => (
+  <div>
+    <Button>Material</Button>
+    <AccessAlarmIcon />
+  </div>
+);
 
 export default App;
