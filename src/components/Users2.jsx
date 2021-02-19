@@ -96,7 +96,7 @@ const useStyles = makeStyles({
     width: "100%",
   },
   container: {
-    maxHeight: 580,
+    maxHeight: 440,
   },
 });
 
@@ -106,7 +106,8 @@ export default function StickyHeadTable() {
     state: { users },
   } = useContext(AppContext);
 
-  const rows = users;
+  console.log("users", users);
+  ///---
 
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
@@ -142,7 +143,7 @@ export default function StickyHeadTable() {
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
