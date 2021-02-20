@@ -38,6 +38,11 @@ const columns = [
     label: "Correo electrónico",
     minWidth: 100,
   },
+  {
+    id: "actions",
+    label: "Acción",
+    minWidth: 100,
+  },
 ];
 
 const useStyles = makeStyles({

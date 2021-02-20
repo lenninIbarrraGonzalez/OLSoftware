@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Card } from "@material-ui/core";
 import AddUsers from "../components/AddUsers";
-import Users from "../components/Users";
+import Users2 from "../components/Users2";
 import Searchs from "../components/Searchs";
 
 const Home = () => (
@@ -10,7 +10,7 @@ const Home = () => (
       <Grid item xs={12} sm={12} md={10} lg={9}>
         <Card>
           <AddUsers />
-          <Users />
+          <Users2 />
         </Card>
       </Grid>
       <Grid item xs={12} sm={12} md={2} lg={3}>
