@@ -120,8 +120,8 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
-  box: {
-    marginBottom: theme.spacing(1),
+  btnAccion: {
+    display: "flex",
   },
 }));
 
@@ -198,12 +198,14 @@ export default function ComponentListProjects() {
                     <TableCell align="left">{row.phone}</TableCell>
                     <TableCell align="left">{row.email}</TableCell>
                     <TableCell align="left">
-                      <Link to="/">
-                        <CreateIcon />
-                      </Link>
-                      <Button type="button">
-                        <DeleteIcon />
-                      </Button>
+                      <div className={classes.btnAccion}>
+                        <Link to="/">
+                          <CreateIcon />
+                        </Link>
+                        <Button type="button">
+                          <DeleteIcon />
+                        </Button>
+                      </div>
                     </TableCell>
                   </TableRow>
                 );
