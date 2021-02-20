@@ -89,7 +89,10 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 const AddUsers = () => {
-  const { addUser } = useContext(AppContext);
+  const {
+    state: { users },
+    addUser,
+  } = useContext(AppContext);
 
   const form = useRef(null);
 
@@ -105,7 +108,9 @@ const AddUsers = () => {
 
   const handleSubmit = () => {
     const formData = new FormData(form.current);
+    const id = (users.length + 1).toString();
     const user = {
+      id: id,
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
       identification: formData.get("identification"),

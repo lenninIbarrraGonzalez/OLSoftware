@@ -131,6 +131,8 @@ export default function ComponentListProjects() {
     state: { users },
   } = useContext(AppContext);
 
+  console.log("USUARIOS >>> ", users);
+
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
