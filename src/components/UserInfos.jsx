@@ -19,7 +19,7 @@ const UserInfos = () => {
   return (
     <div className={classes.root}>
       <AccountCircleIcon />
-      <Typography color="white" className={classes.icon}>
+      <Typography color="secondary" className={classes.icon}>
         Andres Felipe Garcia
       </Typography>
     </div>
