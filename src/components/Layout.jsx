@@ -9,11 +9,11 @@ import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import NotificationsIcon from "@material-ui/icons/Notifications";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { listItems } from "./listItems";
+import UserInfos from "./UserInfos";
 
 const drawerWidth = 260;
 
@@ -142,10 +142,9 @@ const Layout = ({ children }) => {
           >
             Prueba Front-end
           </Typography>
+          <UserInfos />
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
+            <ExitToAppIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -163,15 +162,10 @@ const Layout = ({ children }) => {
         </div>
         <Divider />
         <List>{listItems}</List>
-        {/* <Divider />
-        <List>{secondaryListItems}</List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        {/* <Container maxWidth="lg" className={classes.container}> */}
         <div className={classes.container}>{children}</div>
-
-        {/* </Container> */}
       </main>
     </div>
   );
