@@ -14,6 +14,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { listItems } from "./listItems";
 import UserInfos from "./UserInfos";
+import Footer from "./Footer";
 
 const drawerWidth = 260;
 
@@ -166,6 +167,7 @@ const Layout = ({ children }) => {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <div className={classes.container}>{children}</div>
+        <Footer />
       </main>
     </div>
   );
