@@ -129,11 +129,19 @@ export default function ComponentListProjects() {
   // context
   const {
     state: { users },
+    removeFromUser,
   } = useContext(AppContext);
 
   console.log("USUARIOS >>> ", users);
 
   const classes = useStyles();
+
+  // Creamos una función para eliminar
+  const handleRemove = (user) => () => {
+    // funcion del estado inicial que esta en el hook
+    removeFromUser(user);
+  };
+
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -204,7 +212,7 @@ export default function ComponentListProjects() {
                         <Link to={`/users/${row.id}`}>
                           <CreateIcon />
                         </Link>
-                        <Button type="button">
+                        <Button type="button" onClick={handleRemove(row)}>
                           <DeleteIcon />
                         </Button>
                       </div>
