@@ -201,7 +201,7 @@ export default function ComponentListProjects() {
                     <TableCell align="left">{row.email}</TableCell>
                     <TableCell align="left">
                       <div className={classes.btnAccion}>
-                        <Link to="/">
+                        <Link to={`/users/${row.id}`}>
                           <CreateIcon />
                         </Link>
                         <Button type="button">

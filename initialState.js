@@ -1,4 +1,5 @@
 export default {
+  edit: [],
   users: [
     {
       id: "1",

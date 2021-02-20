@@ -90,9 +90,11 @@ const DialogActions = withStyles((theme) => ({
 
 const AddUsers = () => {
   const {
-    state: { users },
+    state: { users, edit },
     addUser,
   } = useContext(AppContext);
+
+  console.log("ESTE ES EL EDIT", edit);
 
   const form = useRef(null);
 
@@ -110,7 +112,7 @@ const AddUsers = () => {
     const formData = new FormData(form.current);
     const id = (users.length + 1).toString();
     const user = {
-      id: id,
+      id,
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
       identification: formData.get("identification"),
