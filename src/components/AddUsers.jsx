@@ -6,9 +6,12 @@ import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import PeopleIcon from "@material-ui/icons/People";
+
 // import IconButton from "@material-ui/core/IconButton";
 // import CloseIcon from "@material-ui/icons/Close";
 
@@ -40,9 +43,19 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
   },
-  button: {
+  buttons: {
     display: "flex",
     justifyContent: "center",
+    width: "100%",
+    marginTop: 15,
+    paddingBottom: theme.spacing(3),
+  },
+  button: {
+    marginRight: 20,
+  },
+  dialog: {
+    paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
   },
 }));
 
@@ -112,29 +125,138 @@ const AddUsers = () => {
           open={open}
         >
           <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-            Modal title
+            Agregar nuevo usuario
           </DialogTitle>
-          <DialogContent dividers>
-            <Typography gutterBottom>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-              ac consectetur ac, vestibulum at eros.
-            </Typography>
-            <Typography gutterBottom>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur
-              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-              auctor.
-            </Typography>
-            <Typography gutterBottom>
-              Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-              cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-              dui. Donec ullamcorper nulla non metus auctor fringilla.
-            </Typography>
+          <DialogContent>
+            <Grid container spacing={2} className={classes.dialog}>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="firstName"
+                  name="firstName"
+                  label="Nombres"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="lastName"
+                  name="lastName"
+                  label="Apellidos"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="identification"
+                  name="identification"
+                  label="Identificación (C.C)"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="role"
+                  name="role"
+                  label="Rol asociado"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="state"
+                  name="state"
+                  label="Estado"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="password"
+                  name="password"
+                  label="Contraseña"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  type="password"
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="phone"
+                  name="phone"
+                  label="Teléfono"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <TextField
+                  id="email"
+                  name="email"
+                  label="Correo electrónico"
+                  style={{ margin: 8 }}
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+            </Grid>
           </DialogContent>
           <DialogActions>
-            <Button autoFocus onClick={handleClose} color="primary">
-              Save changes
-            </Button>
+            <div className={classes.buttons}>
+              <Button
+                className={classes.button}
+                variant="contained"
+                color="primary"
+              >
+                Aceptar
+              </Button>
+              <Button variant="outlined" color="primary" onClick={handleClose}>
+                Cancelar
+              </Button>
+            </div>
           </DialogActions>
         </Dialog>
       </div>
