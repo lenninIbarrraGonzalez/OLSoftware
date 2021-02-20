@@ -76,6 +76,7 @@ const EditUsers = (props) => {
             <TextField
               id="firstName"
               name="firstName"
+              defaultValue={user[0].firstName}
               label="Nombres"
               style={{ margin: 8 }}
               fullWidth
@@ -90,6 +91,7 @@ const EditUsers = (props) => {
             <TextField
               id="lastName"
               name="lastName"
+              defaultValue={user[0].lastName}
               label="Apellidos"
               style={{ margin: 8 }}
               fullWidth
@@ -104,6 +106,7 @@ const EditUsers = (props) => {
             <TextField
               id="identification"
               name="identification"
+              defaultValue={user[0].identification}
               label="Identificación (C.C)"
               style={{ margin: 8 }}
               fullWidth
@@ -118,6 +121,7 @@ const EditUsers = (props) => {
             <TextField
               id="role"
               name="role"
+              defaultValue={user[0].role}
               label="Rol asociado"
               style={{ margin: 8 }}
               fullWidth
@@ -132,6 +136,7 @@ const EditUsers = (props) => {
             <TextField
               id="state"
               name="state"
+              defaultValue={user[0].state}
               label="Estado"
               style={{ margin: 8 }}
               fullWidth
@@ -146,7 +151,7 @@ const EditUsers = (props) => {
             <TextField
               id="password"
               name="password"
-              label="Contraseña"
+              defaultValue={user[0].password}
               style={{ margin: 8 }}
               fullWidth
               type="password"
@@ -162,6 +167,7 @@ const EditUsers = (props) => {
               id="phone"
               name="phone"
               label="Teléfono"
+              defaultValue={user[0].phone}
               style={{ margin: 8 }}
               fullWidth
               margin="normal"
@@ -175,6 +181,7 @@ const EditUsers = (props) => {
             <TextField
               id="email"
               name="email"
+              defaultValue={user[0].email}
               label="Correo electrónico"
               style={{ margin: 8 }}
               fullWidth
