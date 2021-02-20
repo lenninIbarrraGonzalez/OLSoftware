@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useContext } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -11,9 +11,7 @@ import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import PeopleIcon from "@material-ui/icons/People";
-
-// import IconButton from "@material-ui/core/IconButton";
-// import CloseIcon from "@material-ui/icons/Close";
+import AppContext from "../context/AppContext";
 
 const styles = (theme) => ({
   root: {
@@ -91,6 +89,10 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 const AddUsers = () => {
+  const { addUser } = useContext(AppContext);
+
+  const form = useRef(null);
+
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
 
@@ -99,6 +101,22 @@ const AddUsers = () => {
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleSubmit = () => {
+    const formData = new FormData(form.current);
+    const user = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      identification: formData.get("identification"),
+      role: formData.get("role"),
+      state: formData.get("state"),
+      password: formData.get("password"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+    };
+
+    addUser(user);
   };
 
   return (
@@ -128,128 +146,132 @@ const AddUsers = () => {
             Agregar nuevo usuario
           </DialogTitle>
           <DialogContent>
-            <Grid container spacing={2} className={classes.dialog}>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="firstName"
-                  name="firstName"
-                  label="Nombres"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
+            <form ref={form}>
+              <Grid container spacing={2} className={classes.dialog}>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="firstName"
+                    name="firstName"
+                    label="Nombres"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="lastName"
+                    name="lastName"
+                    label="Apellidos"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="identification"
+                    name="identification"
+                    label="Identificación (C.C)"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="role"
+                    name="role"
+                    label="Rol asociado"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="state"
+                    name="state"
+                    label="Estado"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="password"
+                    name="password"
+                    label="Contraseña"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    type="password"
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="phone"
+                    name="phone"
+                    label="Teléfono"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField
+                    id="email"
+                    name="email"
+                    label="Correo electrónico"
+                    style={{ margin: 8 }}
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="lastName"
-                  name="lastName"
-                  label="Apellidos"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="identification"
-                  name="identification"
-                  label="Identificación (C.C)"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="role"
-                  name="role"
-                  label="Rol asociado"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="state"
-                  name="state"
-                  label="Estado"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="password"
-                  name="password"
-                  label="Contraseña"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  type="password"
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="phone"
-                  name="phone"
-                  label="Teléfono"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <TextField
-                  id="email"
-                  name="email"
-                  label="Correo electrónico"
-                  style={{ margin: 8 }}
-                  fullWidth
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-            </Grid>
+            </form>
           </DialogContent>
           <DialogActions>
             <div className={classes.buttons}>
               <Button
+                type="button"
                 className={classes.button}
                 variant="contained"
                 color="primary"
+                onClick={handleSubmit}
               >
                 Aceptar
               </Button>
