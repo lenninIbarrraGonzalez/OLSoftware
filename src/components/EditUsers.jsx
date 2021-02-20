@@ -4,14 +4,12 @@ import AppContext from "../context/AppContext";
 
 const EditUsers = (props) => {
   const { id } = props.match.params;
-  console.log("este es el id", id)
-
-
+  console.log("este es el id", id);
 
   const { searchUser } = useContext(AppContext);
 
   useEffect(() => {
-    searchUser(id.toString())
+    searchUser(id.toString());
   }, []);
 
   return (
@@ -42,7 +40,6 @@ const EditUsers = (props) => {
       />
     </div>
   );
-}
-
+};
 
 export default EditUsers;

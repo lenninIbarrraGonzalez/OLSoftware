@@ -18,14 +18,14 @@ const useInitiaState = () => {
     });
   };
 
-  const searchUser = payload => {
+  const searchUser = (payload) => {
     // console.log("PAYLOAD>>>", payload);
     // setState({
     //   ...state,
     //   edit: [...state.users]
     // })
     // console.log("RESULTADO DEL state", state)
-  }
+  };
 
   return {
     addUser,
