@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "../containers/Home";
+import Users from "../containers/Users";
 import NotFound from "../containers/NotFound";
 import AppContext from "../context/AppContext";
 import useInitialState from "../hooks/useinitiaState";
@@ -13,7 +13,8 @@ const App = () => {
       <BrowserRouter>
         <Layout>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/users/:id" component={Users} />
             <Route component={NotFound} />
           </Switch>
         </Layout>

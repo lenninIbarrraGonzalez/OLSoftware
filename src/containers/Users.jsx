@@ -4,7 +4,7 @@ import AddUsers from "../components/AddUsers";
 import Users2 from "../components/Users2";
 import Searchs from "../components/Searchs";
 
-const Home = () => (
+const Users = () => (
   <div>
     <Grid container spacing={2}>
       <Grid item xs={12} sm={12} md={10} lg={9}>
@@ -20,4 +20,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default Users;
