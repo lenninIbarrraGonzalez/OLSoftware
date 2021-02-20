@@ -12,9 +12,11 @@ const useInitiaState = () => {
   };
 
   const removeFromUser = (payload) => {
+    console.log("remove", payload);
+
     setState({
       ...state,
-      users: state.users.fiter((items) => items.id !== payload.id),
+      users: state.users.filter((items) => items.id !== payload.id),
     });
   };
 
