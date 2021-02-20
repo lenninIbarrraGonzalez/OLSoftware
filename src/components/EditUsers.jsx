@@ -15,6 +15,18 @@ const EditUsers = () => (
       }}
       variant="outlined"
     />
+    <TextField
+      id="lastName"
+      name="lastName"
+      label="Apellidos"
+      style={{ margin: 8 }}
+      fullWidth
+      margin="normal"
+      InputLabelProps={{
+        shrink: true,
+      }}
+      variant="outlined"
+    />
   </div>
 );
 
