@@ -20,9 +20,12 @@ const useInitiaState = () => {
     });
   };
 
+  const editUser = (payload) => {};
+
   return {
     addUser,
     removeFromUser,
+    editUser,
     state,
   };
 };

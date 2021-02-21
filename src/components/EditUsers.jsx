@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Grid, Card, Typography, Button } from "@material-ui/core";
 import AppContext from "../context/AppContext";
@@ -35,11 +36,13 @@ const useStyles = makeStyles((theme) => ({
 
 const EditUsers = (props) => {
   const classes = useStyles();
+  const history = useHistory();
   const { id } = props.match.params;
   console.log("este es el id", id);
 
   const {
     state: { users },
+    editUser,
   } = useContext(AppContext);
 
   const user = users.filter((user) => user.id === id);
@@ -49,20 +52,23 @@ const EditUsers = (props) => {
   const form = useRef(null);
 
   const handleSubmit = () => {
-    // const formData = new FormData(form.current);
-    // const id = (users.length + 1).toString();
-    // const user = {
-    //   id,
-    //   firstName: formData.get("firstName"),
-    //   lastName: formData.get("lastName"),
-    //   identification: formData.get("identification"),
-    //   role: formData.get("role"),
-    //   state: formData.get("state"),
-    //   password: formData.get("password"),
-    //   phone: formData.get("phone"),
-    //   email: formData.get("email"),
-    // };
-    // addUser(user);
+    const formData = new FormData(form.current);
+
+    const data = {
+      id,
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      identification: formData.get("identification"),
+      role: formData.get("role"),
+      state: formData.get("state"),
+      password: formData.get("password"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+    };
+
+    console.log("DATOS MODIFICADOS", data);
+    editUser(data);
+    history.push("/users");
   };
 
   return (
