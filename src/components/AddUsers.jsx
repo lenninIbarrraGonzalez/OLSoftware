@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -11,6 +11,7 @@ import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import PeopleIcon from "@material-ui/icons/People";
+import Alert from "@material-ui/lab/Alert";
 import AppContext from "../context/AppContext";
 
 const styles = (theme) => ({
@@ -94,7 +95,7 @@ const AddUsers = () => {
     addUser,
   } = useContext(AppContext);
 
-  console.log("ESTE ES EL EDIT", edit);
+  const [alert, setAlert] = useState(false);
 
   const form = useRef(null);
 
@@ -124,10 +125,18 @@ const AddUsers = () => {
     };
 
     addUser(user);
+    setAlert(!alert);
+
+    setTimeout(() => {
+      handleClose();
+    }, 2000);
   };
 
   return (
     <div className={classes.root}>
+      {alert === true ? (
+        <Alert severity="success">Usuario guardado con éxito!</Alert>
+      ) : null}
       <div className={classes.head}>
         <PeopleIcon color="primary" />
         <Typography color="primary" className={classes.title}>

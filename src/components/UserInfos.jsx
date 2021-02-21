@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     paddingLeft: theme.spacing(1.5),
+    color: "white",
   },
 }));
 
