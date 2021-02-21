@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
@@ -97,7 +97,7 @@ const Login = () => {
                 color="textSecondary"
                 gutterBottom
               >
-                Incio de sesión
+                Inicio de sesión
               </Typography>
 
               <TextField
