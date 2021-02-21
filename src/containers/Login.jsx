@@ -7,20 +7,28 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from "@material-ui/core/TextField";
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Paper from '@material-ui/core/Paper';
 import fondologin from "../assets/images/fondologin.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 400,
     padding: theme.spacing(5),
-    marginRight: theme.spacing(15)
+    marginRight: theme.spacing(15),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(1),
+    },
+
   },
   container: {
     height: "100vh",
     width: "100vw",
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "center",
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "flex-end",
+    },
   },
   title: {
     display: "flex",
