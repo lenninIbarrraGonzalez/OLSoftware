@@ -20,7 +20,14 @@ const useInitiaState = () => {
     });
   };
 
-  const editUser = (payload) => {};
+  const editUser = (payload) => {
+    const users = state.users.filter((item) => item.id !== payload.id);
+
+    setState({
+      ...state,
+      users: [...users, payload],
+    })
+  };
 
   return {
     addUser,
