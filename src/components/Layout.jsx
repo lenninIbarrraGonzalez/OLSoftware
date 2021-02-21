@@ -1,5 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+
+import { useLocation, Link } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -102,6 +103,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  icon: {
+    color: "white",
+  },
 }));
 
 const Layout = ({ children }) => {
@@ -159,8 +163,10 @@ const Layout = ({ children }) => {
             Prueba Front-end
           </Typography>
           <UserInfos />
-          <IconButton color="inherit">
-            <ExitToAppIcon />
+          <IconButton>
+            <Link to="/">
+              <ExitToAppIcon className={classes.icon} />
+            </Link>
           </IconButton>
         </Toolbar>
       </AppBar>
