@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from "@material-ui/core/TextField";
 import CssBaseline from '@material-ui/core/CssBaseline';
+import fondologin from "../assets/images/fondologin.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,12 +21,23 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
-    background: "red"
   },
   title: {
     display: "flex",
     justifyContent: "center",
     fontSize: 25,
+  },
+  imagen: {
+    width: "500px",
+    height: "100vh",
+    position: "absolute",
+    left: 0,
+    top: 0,
+    zIndex: -1
+  },
+  img: {
+    width: "100vw",
+    height: "100vh"
   }
 }));
 
@@ -43,44 +55,51 @@ const Login = () => {
   return (
     <>
       <CssBaseline />
-      <div className={classes.container}>
-        <Card className={classes.root}>
-          <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Incio de sesión
-            </Typography>
+      <section>
+        <div className={classes.container}>
+          <Card className={classes.root}>
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Incio de sesión
+              </Typography>
 
-            <TextField
-              id="email"
-              name="email"
-              label="Usuario"
-              type="email"
-              style={{ margin: 8 }}
-              fullWidth
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              variant="outlined"
-            />
-            <TextField
-              id="password"
-              name="password"
-              label="Contraseña"
-              type="password"
-              style={{ margin: 8 }}
-              fullWidth
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              variant="outlined"
-            />
-            <Button fullWidth color="primary" variant="contained" onClick={handleSubmit}>Ingresar</Button>
+              <TextField
+                id="email"
+                name="email"
+                label="Usuario"
+                type="email"
+                style={{ margin: 8 }}
+                fullWidth
+                margin="normal"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                variant="outlined"
+              />
+              <TextField
+                id="password"
+                name="password"
+                label="Contraseña"
+                type="password"
+                style={{ margin: 8 }}
+                fullWidth
+                margin="normal"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                variant="outlined"
+              />
+              <Button fullWidth color="primary" variant="contained" onClick={handleSubmit}>Ingresar</Button>
 
-          </CardContent>
+            </CardContent>
 
-        </Card>
+          </Card>
+
+        </div>
+      </section>
+
+      <div className={classes.imagen}>
+        <img src={fondologin} alt="logo" className={classes.img} />
       </div>
     </>
   )
