@@ -13,6 +13,7 @@ _clona el proyecto_
 ## Despliegue 📦
 - npm run build
 - npm start 
+- El proyecto corre en http://localhost:3005/
 
 ## Tecnlogias 🔧
 - React
