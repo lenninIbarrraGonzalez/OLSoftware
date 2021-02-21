@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -104,6 +105,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Layout = ({ children }) => {
+  const { history } = children;
+  const location = useLocation();
+  const currentLocation = location.pathname;
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -114,6 +119,16 @@ const Layout = ({ children }) => {
   };
   // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+  if (currentLocation === "/") {
+    return (
+      <div>
+        <main>
+          <div />
+          <div>{children}</div>
+        </main>
+      </div>
+    )
+  }
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -171,6 +186,9 @@ const Layout = ({ children }) => {
       </main>
     </div>
   );
+
+
+
 };
 
 export default Layout;
