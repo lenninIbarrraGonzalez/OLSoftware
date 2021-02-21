@@ -127,7 +127,7 @@ const Layout = ({ children }) => {
           <div>{children}</div>
         </main>
       </div>
-    )
+    );
   }
   return (
     <div className={classes.root}>
@@ -186,9 +186,6 @@ const Layout = ({ children }) => {
       </main>
     </div>
   );
-
-
-
 };
 
 export default Layout;

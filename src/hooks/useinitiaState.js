@@ -26,7 +26,7 @@ const useInitiaState = () => {
     setState({
       ...state,
       users: [...users, payload],
-    })
+    });
   };
 
   return {
