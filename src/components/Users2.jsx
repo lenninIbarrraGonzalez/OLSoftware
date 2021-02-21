@@ -132,13 +132,8 @@ export default function ComponentListProjects() {
     removeFromUser,
   } = useContext(AppContext);
 
-  console.log("USUARIOS >>> ", users);
-
   const classes = useStyles();
-
-  // Creamos una función para eliminar
   const handleRemove = (user) => () => {
-    // funcion del estado inicial que esta en el hook
     removeFromUser(user);
   };
 

@@ -1,7 +1,8 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Grid, Card, Typography, Button } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import AppContext from "../context/AppContext";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,8 +39,6 @@ const EditUsers = (props) => {
   const classes = useStyles();
   const history = useHistory();
   const { id } = props.match.params;
-  console.log("este es el id", id);
-
   const {
     state: { users },
     editUser,
@@ -47,7 +46,7 @@ const EditUsers = (props) => {
 
   const user = users.filter((user) => user.id === id);
 
-  console.log("USER FILTER", user);
+  const [alert, setAlert] = useState(false);
 
   const form = useRef(null);
 
@@ -66,15 +65,21 @@ const EditUsers = (props) => {
       email: formData.get("email"),
     };
 
-    console.log("DATOS MODIFICADOS", data);
     editUser(data);
-    history.push("/users");
+    setAlert(!alert);
+
+    setTimeout(() => {
+      history.push("/users");
+    }, 2000);
   };
 
   return (
     <Card className={classes.root}>
       <Typography color="primary" className={classes.title}>
         Modificar información de usuario
+        {alert === true ? (
+          <Alert severity="success">Usuario modificado con éxito!</Alert>
+        ) : null}
       </Typography>
       <form ref={form}>
         <Grid container spacing={2}>
