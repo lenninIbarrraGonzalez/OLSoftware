@@ -36,4 +36,7 @@ _clona el proyecto_
 ## Licencia 📄
 Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](https://wikis.fdi.ucm.es/ELP/Licencia_MIT) para detalles
 
+![alt text](https://github.com/lenninIbarrraGonzalez/OLSoftware/blob/develop/imagen.png)
+![alt text](https://github.com/lenninIbarrraGonzalez/OLSoftware/blob/develop/imagen2.png)
+
 
